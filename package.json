@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "kurama.helloWorld",
-        "title": "Hello World"
+        "command": "kurama.deepseek",
+        "title": "DeepSeek-Kurama"
       }
     ]
   },

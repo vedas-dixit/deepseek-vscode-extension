@@ -159,7 +159,7 @@ function GetWebViewContent() {
     `;
 }
 function activate(context) {
-    const disposable = vscode.commands.registerCommand('kurama.helloWorld', () => {
+    const disposable = vscode.commands.registerCommand('kurama.deepseek', () => {
         const panel = vscode.window.createWebviewPanel('deepchat', "Deep Seek Chat", vscode.ViewColumn.One, { enableScripts: true });
         panel.webview.html = GetWebViewContent();
         panel.webview.onDidReceiveMessage(async (message) => {

@@ -132,7 +132,7 @@ function GetWebViewContent(): string {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-    const disposable = vscode.commands.registerCommand('kurama.helloWorld', () => {
+    const disposable = vscode.commands.registerCommand('kurama.deepseek', () => {
         const panel = vscode.window.createWebviewPanel('deepchat', "Deep Seek Chat", vscode.ViewColumn.One, { enableScripts: true });
 
         panel.webview.html = GetWebViewContent();
