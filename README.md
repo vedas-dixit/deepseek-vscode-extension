@@ -1,73 +1,89 @@
-# kurama README
+DeepSeek VS Code Extension
 
-This is the README for your extension "kurama". After writing up a brief description, we recommend including the following sections.
+🚀 DeepSeek AI-powered VS Code extension for seamless AI interactions within your editor.
 
-## Features
+Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+AI Chat Panel: Ask DeepSeek AI directly inside VS Code.
 
-For example if there is an image subfolder under your extension project workspace:
+Uses DeepSeek-R1 (1.5B) model via Ollama.
 
-\!\[feature X\]\(images/feature-x.png\)
+Interactive WebView UI: Clean, minimalistic chat interface.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Streaming Response: AI replies dynamically as it processes.
 
-## Requirements
+Installation
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1️⃣ Install Ollama (Required for Running DeepSeek)
 
-## Extension Settings
+Download and install Ollama based on your OS:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+macOS/Linux:
 
-For example:
+curl -fsSL https://ollama.com/install.sh | sh
 
-This extension contributes the following settings:
+Windows:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Download Ollama and install manually.
 
-## Known Issues
+Then, pull the DeepSeek model:
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+ollama pull deepseek-r1:1.5b
 
-## Release Notes
+2️⃣ Install the Extension (Locally)
 
-Users appreciate release notes as you update your extension.
+git clone https://github.com/vedas-dixit/deepseek-vscode-extension.git
+cd deepseek-vscode-extension
+npm install
 
-### 1.0.0
+3️⃣ Run in VS Code
 
-Initial release of ...
+Open the folder in VS Code
 
-### 1.0.1
+Press F5 to launch in Extension Development Mode
 
-Fixed issue #.
+Open the Command Palette (Ctrl+Shift+P → "DeepSeek Chat")
 
-### 1.1.0
+How It Works
 
-Added features X, Y, and Z.
+The extension opens a WebView where you can enter your prompt.
 
----
+It sends the query to DeepSeek AI via the Ollama API.
 
-## Following extension guidelines
+AI responses are streamed back inside VS Code.
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Development & Contribution
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+Want to improve the extension? Follow these steps:
 
-## Working with Markdown
+git clone https://github.com/vedas-dixit/deepseek-vscode-extension.git
+cd deepseek-vscode-extension
+npm install
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+To Test the Extension Locally:
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+Open the folder in VS Code
 
-## For more information
+Press F5 to launch the extension in a new window
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Test the chat feature
 
-**Enjoy!**
+Publish to VS Code Marketplace
 
-# deepseek-vscode-extension
+1️⃣ Package the Extension
+
+vsce package
+
+This creates a .vsix file.
+
+2️⃣ Publish to Marketplace
+
+vsce publish
+
+If it's an update:
+
+vsce publish minor
+
+License
+
+This project is licensed under the MIT License.
